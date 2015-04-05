@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:'Maquinarias' /}
+
+<div class="row">
+	
+	#{list items:tiposDeMaquinarias, as: 'tipoDeMaquinaria'}
+	<div class="col-md-3">
+		<img class="col-md-12" src="@{'/public/img'}/${tipoDeMaquinaria.img_id}.png" />
+		<br/>
+		<h4 class="center">${tipoDeMaquinaria.nombre}</h4>
+	</div>
+	#{/list}
+	
+</div>

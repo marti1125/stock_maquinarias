@@ -1,0 +1,15 @@
+*.class
+*~
+# Package Files #
+*.war
+*.ear
+
+lib/
+precompiled/
+modules/
+tmp/
+.settings/
+eclipse/
+nbproject/
+.project
+.classpath
