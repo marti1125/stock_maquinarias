@@ -15,8 +15,14 @@ GET     /public/                                staticDir:public
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
 
-#RESTful
-GET     /api/tipomaquinarias                    Rest.tiposDeMaquinarias
-GET     /api/municipalidades                    Rest.municipalidades
-GET     /api/codigomaquinaria                   Rest.codigomaquinaria
-GET     /api/obtenerprecio/{codigo}             Rest.obtenerPrecioPorHora
+#RESTful-GET
+GET     /maquinaria/api/tipomaquinarias                    Rest.tiposDeMaquinarias
+GET     /maquinaria/api/municipalidades                    Rest.municipalidades
+GET     /maquinaria/api/codigomaquinaria                   Rest.codigomaquinaria
+GET     /maquinaria/api/obtenerprecio/{codigo}             Rest.obtenerPrecioPorHora
+GET     /maquinaria/api/obtenerFechas/{codigo}             Rest.obtenerFechas
+GET     /maquinaria/api/detallestockmunicipalidad          Rest.listaDetalleStockMunicipalidad
+
+#RESTful-POST
+POST    /maquinaria/api/nuevoPrincipal/{dni}/{ciudadano}/{direccionCiudadano}/{ruc}/{empresa}/{direccionEmpresa}/{costoTotal}/{municipalidad}    Rest.nuevoPrincipal
+POST    /maquinaria/api/detallestockmunicipalidad/{stockMunicipalidad}/{fechaInicio}/{fechaFin}/{costoTotal}                                     Rest.nuevoDetalleStockMunicipalidad

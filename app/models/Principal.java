@@ -2,6 +2,7 @@ package models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import play.db.jpa.GenericModel;
@@ -28,6 +29,7 @@ public class Principal extends GenericModel {
 	public double costoTotal;
 	
 	@ManyToOne
+	@JoinColumn(name="municipalidad")
 	public Municipalidad municipalidad;
 
 }
