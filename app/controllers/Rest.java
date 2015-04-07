@@ -83,7 +83,11 @@ public class Rest extends Controller {
 		Object precio = StockMunicipalidad.find("select a.p_hora from stock_municipalidad sm inner join sm.tipoMaquinaria tm " +
         		" inner join tm.alquileres a where sm.codigo = '" + codigo + "'").first();
 		
-		ObtenerPrecioTipoMaquinaria obtenerPrecio = new ObtenerPrecioTipoMaquinaria((Double)precio);
+		ObtenerPrecioTipoMaquinaria obtenerPrecio = new ObtenerPrecioTipoMaquinaria();
+		
+		if(precio != null){
+			obtenerPrecio = new ObtenerPrecioTipoMaquinaria((Double)precio);
+		}
 		
 		org.codehaus.jackson.map.ObjectMapper mapper = new ObjectMapper();		
 		renderJSON(mapper.writeValueAsString(obtenerPrecio));
@@ -99,13 +103,15 @@ public class Rest extends Controller {
 		Evento eventos = new Evento();
 		List<Propiedad> lp = new ArrayList<Propiedad>();
 		
-		for(Object[] fecha : fechas){
-        	
-        	Propiedad p = new Propiedad("Reservado", String.valueOf(fecha[0]).replace(" 00:00:00.0", ""), 
-        			String.valueOf(fecha[1]).replace(" 00:00:00.0", ""));
-        	lp.add(p);
-        	
-        }
+		if(fechas != null){
+			for(Object[] fecha : fechas){
+	        	
+	        	Propiedad p = new Propiedad("Reservado", String.valueOf(fecha[0]).replace(" 00:00:00.0", ""), 
+	        			String.valueOf(fecha[1]).replace(" 00:00:00.0", ""));
+	        	lp.add(p);
+	        	
+	        }
+		}
 		
 		eventos = new Evento(lp, "#26A2E0", "white");
 		
