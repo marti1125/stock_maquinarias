@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import play.db.jpa.GenericModel;
 
 
-@Entity
+@Entity(name="principal")
 public class Principal extends GenericModel {
 	
 	@Id

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 import play.db.jpa.GenericModel;
 
-@Entity
+@Entity(name="municipalidad")
 public class Municipalidad extends GenericModel {
 	
 	@Id

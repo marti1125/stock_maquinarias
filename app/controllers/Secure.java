@@ -15,7 +15,7 @@ public class Secure extends Controller {
     static void checkAccess() throws Throwable {
         // Authent
         if(!session.contains("username")) {
-            flash.put("url", "GET".equals(request.method) ? request.url : Play.ctxPath + "/Dashboard/index"); // seems a good default
+            flash.put("url", "GET".equals(request.method) ? request.url : Play.ctxPath + "/dashboard/index"); // seems a good default
             login();
         }
         // Checks
@@ -95,7 +95,7 @@ public class Secure extends Controller {
         }
         // Redirect to the original URL (or /)
         //redirectToOriginalURL();
-        redirect(Play.ctxPath + "/Dashboard/index");
+        redirect(Play.ctxPath + "/dashboard/index");
     }
 
     public static void logout() throws Throwable {

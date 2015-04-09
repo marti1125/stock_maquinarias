@@ -98,7 +98,7 @@ public class Rest extends Controller {
 		
 		response.headers.put("Access-Control-Allow-Origin", new Header("Access-Control-Allow-Origin", "*"));
 		
-		List<Object[]> fechas = Movimiento.find("select m.fechaInicio, m.fechaFin from Movimiento m where m.stockMunicipalidad = '" + codigo + "'").fetch();
+		List<Object[]> fechas = Movimiento.find("select m.fechaInicio, m.fechaFin from movimiento m where m.stockMunicipalidad = '" + codigo + "'").fetch();
 		
 		Evento eventos = new Evento();
 		List<Propiedad> lp = new ArrayList<Propiedad>();
@@ -147,7 +147,7 @@ public class Rest extends Controller {
 	public static void listaDetalleStockMunicipalidad() throws JsonGenerationException, JsonMappingException, IOException {
 		
 		List<Object[]> listas = DetalleStockMunicipalidad.find("select sm.codigo, tm.nombre, dsm.id, dsm.fechaInicio, dsm.fechaFin, dsm.costoTotal " +
-    			" from DetalleStockMunicipalidad dsm inner join dsm.stockMunicipalidad sm inner join sm.tipoMaquinaria tm ").fetch();
+    			" from detalle_stockmunicipalidad dsm inner join dsm.stockMunicipalidad sm inner join sm.tipoMaquinaria tm ").fetch();
 		
 		List<ListaDetalleStockMunicipalidad> detalles = new ArrayList<ListaDetalleStockMunicipalidad>();
 		

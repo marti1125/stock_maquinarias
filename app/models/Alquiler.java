@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 
 import play.db.jpa.GenericModel;
 
-@Entity
+@Entity(name="alquiler")
 public class Alquiler extends GenericModel {
 	
 	@Id

@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 
 import play.db.jpa.GenericModel;
 
-@Entity
+@Entity(name="movimiento")
 public class Movimiento extends GenericModel {
 	
 	@Id

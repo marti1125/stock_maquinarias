@@ -6,7 +6,7 @@ import javax.persistence.*;
 import play.data.validation.*;
 import play.db.jpa.*;
 
-@Entity
+@Entity(name="usuario")
 public class Usuario extends Model{	
 	
 	@Required
