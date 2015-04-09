@@ -120,30 +120,6 @@ public class Rest extends Controller {
 		
 	}
 	
-	public static void nuevoPrincipal(String dni, String ciudadano, String direccionCiudadano, String ruc,
-            						  String empresa, String direccionEmpresa, double costoTotal, long municipalidad) throws JsonGenerationException, 
-            						  JsonMappingException, IOException {
-		
-		Municipalidad municipalidadEncontrada = Municipalidad.findById(municipalidad);
-		
-		models.Principal principal = new models.Principal();
-		principal.dni = dni;
-		principal.ciudadano = ciudadano;
-		principal.direccionCiudadano = direccionCiudadano;
-		principal.ruc = ruc;
-		principal.empresa = empresa;
-		principal.direccionEmpresa = direccionEmpresa;
-		principal.costoTotal = costoTotal;
-		principal.municipalidad = municipalidadEncontrada;
-		principal.save();
-		
-		Verificar verificar = new Verificar(true, "OK!");
-		
-		org.codehaus.jackson.map.ObjectMapper mapper = new ObjectMapper();		
-		renderJSON(mapper.writeValueAsString(verificar));		
-		
-	}
-	
 	public static void listaDetalleStockMunicipalidad() throws JsonGenerationException, JsonMappingException, IOException {
 		
 		List<Object[]> listas = DetalleStockMunicipalidad.find("select sm.codigo, tm.nombre, dsm.id, dsm.fechaInicio, dsm.fechaFin, dsm.costoTotal " +

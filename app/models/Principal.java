@@ -1,18 +1,17 @@
 package models;
 
+import java.io.InputStream;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import play.db.jpa.GenericModel;
-
+import play.db.jpa.Model;
 
 @Entity(name="principal")
-public class Principal extends GenericModel {
-	
-	@Id
-	public long id;
+public class Principal extends Model {
 	
 	public String dni;
 	
@@ -20,16 +19,24 @@ public class Principal extends GenericModel {
 	
 	public String direccionCiudadano;
 	
+	public String telefono;
+	
 	public String ruc;
 	
 	public String empresa;
 	
 	public String direccionEmpresa;
 	
-	public double costoTotal;
+	public String fechaInicio;
 	
-	@ManyToOne
-	@JoinColumn(name="municipalidad")
-	public Municipalidad municipalidad;
-
+	public String fechaFin;
+	
+	public String stockMunicipalidad;
+	
+	public String costoTotal;
+	
+	public String municipalidad;
+	
+	public Date fechaCreacion;
+	
 }

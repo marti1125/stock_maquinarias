@@ -24,5 +24,4 @@ GET     /maquinaria/api/obtenerfechas/{codigo}             Rest.obtenerFechas
 GET     /maquinaria/api/detallestockmunicipalidad          Rest.listaDetalleStockMunicipalidad
 
 #RESTful-POST
-POST    /maquinaria/api/nuevoPrincipal/{dni}/{ciudadano}/{direccionCiudadano}/{ruc}/{empresa}/{direccionEmpresa}/{costoTotal}/{municipalidad}    Rest.nuevoPrincipal
 POST    /maquinaria/api/detallestockmunicipalidad/{stockMunicipalidad}/{fechaInicio}/{fechaFin}/{costoTotal}                                     Rest.nuevoDetalleStockMunicipalidad
