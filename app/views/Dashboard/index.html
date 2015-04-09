@@ -4,8 +4,65 @@
 	
 <div class="row">	
 	
-	<div class="col-md-3">
-		Reportes
+	<div class="col-md-12">
+		<h3>Información por cada tramite</h3>
+		<br/>
+		<table class="table">
+			#{list items:datos, as: 'dato'}
+			<tr>
+				<td>DNI</td>
+				<td>${dato.dni}</td>
+			</tr>
+			<tr>
+				<td>CIUDADANO</td>
+				<td>${dato.ciudadano}</td>
+			</tr>
+			<tr>
+				<td>DIRECCION</td>
+				<td>${dato.direccionCiudadano}</td>
+			</tr>
+			<tr>
+				<td>TELEFONO</td>
+				<td>${dato.telefono}</td>
+			</tr>
+			<tr>
+				<td>RUC</td>
+				<td>${dato.ruc}</td>
+			</tr>
+			<tr>
+				<td>EMPRESA</td>
+				<td>${dato.empresa}</td>
+			</tr>
+			<tr>
+				<td>DIRECCION</td>
+				<td>${dato.direccionEmpresa}</td>
+			</tr>
+			<tr>
+				<td>FECHA DE INICIO</td>
+				<td>${dato.fechaInicio}</td>
+			</tr>
+			<tr>
+				<td>FECHA FIN</td>
+				<td>${dato.fechaFin}</td>
+			</tr>
+			<tr>
+				<td>MAQUINARIA</td>
+				<td>${dato.stockMunicipalidad}</td>
+			</tr>
+			<tr>
+				<td>PRECIO FINAL</td>
+				<td>${dato.costoTotal}</td>
+			</tr>
+			<tr>
+				<td>MUNICIPALIDAD</td>
+				<td>${dato.municipalidad}</td>
+			</tr>
+			<tr>
+				<td>FECHA DE CREACION</td>
+				<td>${dato.fechaCreacion}</td>
+			</tr>
+			#{/list}
+		</table>
 	</div>
 	
 </div>
