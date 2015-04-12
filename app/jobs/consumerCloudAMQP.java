@@ -32,7 +32,7 @@ public class ConsumerCloudAMQP extends Job {
 		NoSuchAlgorithmException, URISyntaxException {
 		
 		 	String uri = System.getenv("CLOUDAMQP_URL");
-	        if (uri == null) uri = "amqp://ohnyasyb:lhae9F38Lqc08e6ySZYlvjgVP8xWDjgI@tiger.cloudamqp.com/ohnyasyb";
+	        if (uri == null) uri = "{url from rabbitmq}";
 
 	        ConnectionFactory factory = new ConnectionFactory();
 	        factory.setUri(uri);
