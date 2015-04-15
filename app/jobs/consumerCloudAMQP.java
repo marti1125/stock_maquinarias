@@ -39,7 +39,7 @@ public class ConsumerCloudAMQP extends Job {
 	        
 	        //Recommended settings
 	        factory.setRequestedHeartbeat(30);
-	        factory.setConnectionTimeout(30000);
+	        factory.setConnectionTimeout(120000);
 	        
 	        com.rabbitmq.client.Connection connection = factory.newConnection();
 	        com.rabbitmq.client.Channel channel = connection.createChannel();
